@@ -1,0 +1,37 @@
+//BEGIN header
+header.header
+  div.container
+    nav.nav
+      a.nav__btn
+        span.nav__btn__line
+        span.nav__btn__line
+        span.nav__btn__line
+      ul.nav__menu#nav__menu
+        li
+          a.nav__menu__link(href="#main") на главную
+        li
+          a.nav__menu__link(href="#about") о компании
+        li
+          a.nav__menu__link(href="#catalog") каталог продукции
+        li
+          a.nav__menu__link(href="#sale") акции
+        li
+          a.nav__menu__link(href="#guarantee") гарантии
+        li
+          a.nav__menu__link(href="#contacts") контакти
+    div.header__right
+      a.cart(href="#checkout")
+        div.cart__icon
+          span.icon-cart_small
+        div.cart__desc
+          span Товаров: 3
+          br
+          span Сумма: 5.000 грн.
+      div.lang
+        a.lang__link.active(href="#ru") ru
+        a.lang__link(href="en") ua
+      div.search
+        input.search__input(type="text" placeholder="Поиск")
+        a.search__btn
+          span.icon-search
+//END header

@@ -1,0 +1,192 @@
+---
+title: Nakitel Test Page
+---
+extends layouts/_layout
+block content
+  div.container
+    div.sub-header
+      div.aside-left
+        a.aside-left__sign-in(href="#sign-in") Войти на сайт
+        a.aside-left__reg(href="#registration") Зарегистрироваться
+        div.aside-left__social
+          a(href="#twitter" target="_blank")
+            span.icon-twitter
+          a(href="#vk" target="_blank")
+            span.icon-vk
+          a(href="#fb" target="_blank")
+            span.icon-fb
+          a(href="#rss" target="_blank")
+            span.icon-rss
+          a(href="#google" target="_blank")
+            span.icon-google_plus
+        a.aside-left__cart(href="#checkout")
+          div.aside-left__cart__icon
+            span.icon-cart_big
+          div.aside-left__cart__text
+            h2.aside-left__cart__title Корзина
+            div.aside-left__cart__desc
+              span Товаров:
+              b &nbsp; 3
+              br
+              span На сумму:
+              b &nbsp; 5.000
+      div.center
+        a.center__logo(href="/" target="_parent")
+          span.icon-logo
+      div.aside-right
+        div.contacts
+          span.contacts__text Телефон горячей линии
+          br
+          a.contacts__phone(href="tel:+120345678910") +12(034) 567 89 10
+          br
+          span.contacts__text (пн.- пт. с 9:00 до 18:00)
+        div.request
+          span.request--big вызвать
+          br
+          span.request--small замерщика
+
+    div.catalog
+      -
+        var doors = [
+          {
+            image: "img/door_1.png",
+            type: "шпонированные"
+          },
+          {
+            image: "img/door_2.png",
+            type: "экошпон"
+          },
+          {
+            image: "img/door_3.png",
+            type: "из массива"
+          },
+          {
+            image: "img/door_4.png",
+            type: "входные"
+          },
+          {
+            image: "img/door_5.png",
+            type: "спец назначения"
+          }
+        ];
+      for door in doors
+        div.catalog__item
+          img.catalog__item__img(alt="catalog image" src= door.image)
+          span.catalog__item__title двери
+          br
+          span.catalog__item__type= door.type
+
+    div.slider
+      -
+        var sliders = [
+          {
+            title: 'Дверь на дачу',
+            image: 'img/slide_1.jpg'
+          },
+          {
+            title: 'Двери в квартиру',
+            image: 'img/slide_2.jpg'
+          },
+          {
+            title: 'Двери для офиса',
+            image: 'img/slide_3.jpg'
+          },
+          {
+            title: 'Двери для офиса',
+            image: 'img/slide_3.jpg'
+          }
+        ];
+      for slider in sliders
+        div.slider__item
+          img.slider__item__img(src= slider.image)
+          span.slider__item__title= slider.title
+
+    section.about
+      h1.about__title о компании
+      div.aside-left
+        nav.nav
+          ul.nav__menu
+            -
+              var menus =  [
+                {
+                  title: "главная",
+                  href: "#main"
+                },
+                {
+                  title: "о компании",
+                  href: "#about"
+                },
+                {
+                  title: "каталог продукции",
+                  href: "catalog"
+                },
+                {
+                  title: "оплата / доставка",
+                  href: "#payment"
+                },
+                {
+                  title: "акции",
+                  href: "#sale"
+                },
+                {
+                  title: "гарантия",
+                  href: "#guarentee"
+                },
+                {
+                  title: "контакти",
+                  href: "#contacts"
+                }
+              ];
+            for menu in menus
+              li
+                a.nav__link(target="_parent" href=menu.href)= menu.title
+      div.center
+        div.about__desc(style="background-image: url(img/bg_about_text.png)")
+          p Повседневная практика показывает, что постоянный количественный рост и сфера нашей активности позволяет оценить значение существенных финансовых и административных условий. Значимость этих проблем настолько очевидна, что консультация с широким активом представляет собой интересный эксперимент проверки направлений прогрессивного развития.
+          br
+          p Идейные соображения высшего порядка, а также сложившаяся структура организации влечет за собой процесс внедрения и модернизации системы обучения кадров, соответствует насущным потребностям.
+          br
+          p Таким образом сложившаяся структура организации требуют определения и уточнения направлений прогрессивного развития. С другой стороны сложившаяся структура организации способствует подготовки и реализации системы обучения кадров, соответствует насущным потребностям. Значимость этих проблем настолько очевидна, что укрепление и развитие структуры влечет за собой процесс внедрения и модернизации соответствующий условий активизации.
+          br
+          p С другой стороны начало повседневной работы по формированию позиции позволяет оценить значение дальнейших направлений развития. Идейные соображения высшего порядка, а также реализация намеченных плановых заданий влечет за собой процесс внедрения и модернизации позиций, занимаемых участниками в отношении поставленных задач. С другой стороны начало повседневной работы по формированию позиции представляет собой интересный эксперимент проверки новых предложений. Равным образом рамки и место обучения кадров в значительной степени обуславливает создание системы обучения кадров, соответствует насущным потребностям.
+          br
+          p Повседневная практика показывает, что дальнейшее развитие различных форм деятельности в значительной степени обуславливает создание системы обучения кадров, соответствует насущным потребностям. Не следует, однако забывать, что рамки и место обучения кадров обеспечивает широкому кругу (специалистов) участие в формировании модели развития.
+          br
+          p Товарищи! начало повседневной работы по формированию позиции позволяет выполнять важные задания по разработке систем массового участия.
+
+      div.aside-right
+        div.contacts
+          span.contacts__text Телефон горячей линии
+          br
+          a.contacts__phone(href="tel:+380674027101") +38(067) 402 71 01
+          br
+          span.contacts__text (пн.- пт. с 9:00 до 18:00)
+        div.request
+          span.request--big вызвать
+          span.request--small замерщика
+        div.banner
+          div.banner__img
+            img(src="img/bg_banner.png")
+            div.banner__img__title
+              span Банерная
+              span.banner__img__title--big область
+
+        div.contacts
+          span.contacts__text Телефон горячей линии
+          br
+          a.contacts__phone(href="tel:+380674027101") +38(067) 402 71 01
+          br
+          span.contacts__text (пн.- пт. с 9:00 до 18:00)
+        div.request
+          span.request--big вызвать
+          span.request--small замерщика
+        div.banner
+          div.banner__img
+            img(src="img/bg_banner.png")
+            div.banner__img__title
+              span Банерная
+              span.banner__img__title--big область
+
+
+
+

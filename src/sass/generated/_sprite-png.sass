@@ -1,0 +1,114 @@
+$icons: (0:0)
+$icons: map-merge($icons,('cart_big': (X: 0px, Y:-164px, W: 57px, H: 51px, TW: 285px, TH: 215px, IMG: '../img/sprite.png')))
+$icons: map-merge($icons,('cart_small': (X: -67px, Y:-164px, W: 32px, H: 28px, TW: 285px, TH: 215px, IMG: '../img/sprite.png')))
+$icons: map-merge($icons,('facebook': (X: -265px, Y:-48px, W: 10px, H: 19px, TW: 285px, TH: 215px, IMG: '../img/sprite.png')))
+$icons: map-merge($icons,('facebook@2x': (X: -265px, Y:0px, W: 20px, H: 38px, TW: 285px, TH: 215px, IMG: '../img/sprite.png')))
+$icons: map-merge($icons,('fb': (X: -226px, Y:-39px, W: 29px, H: 29px, TW: 285px, TH: 215px, IMG: '../img/sprite.png')))
+$icons: map-merge($icons,('google_plus': (X: -226px, Y:-156px, W: 29px, H: 29px, TW: 285px, TH: 215px, IMG: '../img/sprite.png')))
+$icons: map-merge($icons,('logo': (X: 0px, Y:0px, W: 216px, H: 154px, TW: 285px, TH: 215px, IMG: '../img/sprite.png')))
+$icons: map-merge($icons,('rss': (X: -226px, Y:0px, W: 29px, H: 29px, TW: 285px, TH: 215px, IMG: '../img/sprite.png')))
+$icons: map-merge($icons,('search': (X: -109px, Y:-164px, W: 26px, H: 21px, TW: 285px, TH: 215px, IMG: '../img/sprite.png')))
+$icons: map-merge($icons,('twitter': (X: -226px, Y:-117px, W: 29px, H: 29px, TW: 285px, TH: 215px, IMG: '../img/sprite.png')))
+$icons: map-merge($icons,('vk': (X: -226px, Y:-78px, W: 29px, H: 29px, TW: 285px, TH: 215px, IMG: '../img/sprite.png')))
+
+
+// Gets an attribute from the sass map
+@function icon-attr($icon, $attr)
+  $icon: map-get($icons, $icon)
+  @return map-get($icon, $attr)
+
+@mixin sprite($iconName)
+  background-image: url(icon-attr($iconName, IMG))
+  width: icon-attr($iconName, W)
+  height: icon-attr($iconName, H)
+  background-position: icon-attr($iconName, X) icon-attr($iconName, Y)
+@mixin sprite-position($iconName)
+  background-position: icon-attr($iconName, X) icon-attr($iconName, Y)
+@mixin sprite-retina($iconName)
+  background-image: url(icon-attr($iconName, IMG))
+  $width: icon-attr($iconName, W)
+  $height: icon-attr($iconName, H)
+  width: $width/2
+  height: $height/2
+  $x: icon-attr($iconName, X)
+  $y: icon-attr($iconName, Y)
+  background-position: $x/2 $y/2
+  $tw: icon-attr($iconName, TW)   
+  $th: icon-attr($iconName, TH)
+  background-size: $tw/2 $th/2    
+
+
+@mixin s($i)
+  +sprite($i)
+@mixin sp($i)
+  +sprite-position($i)
+@mixin sr($i)
+  +sprite-retina($i)  
+
+//
+//.icon-cart_big
+//  width: 57px
+//  height: 51px
+//  background-image: url('../img/sprite.png')
+//  background-position: 0px -164px
+//
+//.icon-cart_small
+//  width: 32px
+//  height: 28px
+//  background-image: url('../img/sprite.png')
+//  background-position: -67px -164px
+//
+//.icon-facebook
+//  width: 10px
+//  height: 19px
+//  background-image: url('../img/sprite.png')
+//  background-position: -265px -48px
+//
+//.icon-facebook@2x
+//  width: 20px
+//  height: 38px
+//  background-image: url('../img/sprite.png')
+//  background-position: -265px 0px
+//
+//.icon-fb
+//  width: 29px
+//  height: 29px
+//  background-image: url('../img/sprite.png')
+//  background-position: -226px -39px
+//
+//.icon-google_plus
+//  width: 29px
+//  height: 29px
+//  background-image: url('../img/sprite.png')
+//  background-position: -226px -156px
+//
+//.icon-logo
+//  width: 216px
+//  height: 154px
+//  background-image: url('../img/sprite.png')
+//  background-position: 0px 0px
+//
+//.icon-rss
+//  width: 29px
+//  height: 29px
+//  background-image: url('../img/sprite.png')
+//  background-position: -226px 0px
+//
+//.icon-search
+//  width: 26px
+//  height: 21px
+//  background-image: url('../img/sprite.png')
+//  background-position: -109px -164px
+//
+//.icon-twitter
+//  width: 29px
+//  height: 29px
+//  background-image: url('../img/sprite.png')
+//  background-position: -226px -117px
+//
+//.icon-vk
+//  width: 29px
+//  height: 29px
+//  background-image: url('../img/sprite.png')
+//  background-position: -226px -78px
+//
